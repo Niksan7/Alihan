@@ -85,7 +85,7 @@ h2 {
 }
 
 .phone-label {
-    line-height: 0; /* убираем лишний отступ от inline-элемента */
+    line-height: 0;
 }
 
 .phone a {
@@ -157,26 +157,21 @@ footer {
         padding: 1.5rem;
     }
 
-    .phone {
-        flex-direction: column;
-        text-align: center;
-        gap: 0.5rem;
-    }
-
-    .phone:hover {
-        transform: none;
-    }
-
-    .instagram {
-        flex-direction: column;
-        text-align: center;
-    }
-
-    /* Увеличиваем иконки на мобильных */
+    /* Увеличиваем иконки для удобного нажатия */
     .phone img,
     .instagram img {
         width: 50px;
         height: 50px;
+    }
+
+    /* На мобильных убираем горизонтальный сдвиг при наведении */
+    .phone:hover {
+        transform: none;
+    }
+
+    /* Для Instagram тоже отключаем лишние эффекты, если мешают */
+    .instagram:hover {
+        transform: none;
     }
 }
 
@@ -199,7 +194,7 @@ footer {
     }
 
     .phone a, .instagram a {
-        word-break: break-word;
+        word-break: break-word; /* Перенос длинных слов, если не помещаются */
     }
 }
 
