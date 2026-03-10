@@ -18,7 +18,7 @@ body {
 img {
     max-width: 100%;
     height: auto;
-    display: block;
+    display: block; /* Убирает лишние отступы снизу */
 }
 
 /* ===== Шапка ===== */
@@ -70,6 +70,7 @@ h2 {
     gap: 1rem;
 }
 
+/* Стили для ссылок-карточек */
 .phone {
     display: flex;
     align-items: center;
@@ -78,41 +79,17 @@ h2 {
     background: #f7fafc;
     border-radius: 12px;
     transition: transform 0.3s;
-}
-
-.phone:hover {
-    transform: translateX(10px);
-}
-
-.phone-label {
-    line-height: 0;
-}
-
-.phone a {
-    color: #4a5568;
+     color: #4a5568;
     text-decoration: none;
     font-size: clamp(1rem, 4vw, 1.2rem);
     font-weight: 500;
 }
 
-.phone a:hover {
-    color: #667eea;
+.phone:hover {
+    transform: translateX(10px);
+    color: #667eea; /* меняем цвет текста при наведении */
 }
 
-.phone a:focus,
-.instagram a:focus {
-    outline: 2px solid #667eea;
-    outline-offset: 2px;
-}
-
-/* Иконки телефона */
-.phone img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-}
-
-/* Instagram */
 .instagram {
     display: flex;
     align-items: center;
@@ -121,6 +98,9 @@ h2 {
     background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
     border-radius: 12px;
     color: white;
+    text-decoration: none;
+    font-size: clamp(1rem, 4vw, 1.2rem);
+    font-weight: 600;
     transition: transform 0.3s;
 }
 
@@ -128,19 +108,25 @@ h2 {
     transform: scale(1.02);
 }
 
-.instagram img {
-    width: 44px;
-    height: 44px;
-    border-radius: 50%;
-    background: white;
-    object-fit: contain;
+/* Фокус для доступности */
+.phone:focus,
+.instagram:focus {
+    outline: 2px solid #667eea;
+    outline-offset: 2px;
 }
 
-.instagram a {
-    color: white;
-    text-decoration: none;
-    font-size: clamp(1rem, 4vw, 1.2rem);
-    font-weight: 600;
+/* Иконки */
+.phone img,
+ .instagram img {
+    width: 44px;
+    height: 44px;
+    object-fit: contain;
+    flex-shrink: 0; /* защита от сжатия */
+}
+
+.instagram img {
+    border-radius: 50%;
+    background: white;
 }
 
 /* ===== Подвал ===== */
@@ -194,11 +180,13 @@ footer {
         border-radius: 15px;
     }
 
-    .phone, .instagram {
+    .phone, 
+    .instagram {
         padding: 0.8rem;
     }
 
-    .phone a, .instagram a {
+    .phone, 
+    .instagram {
         word-break: break-word; /* Перенос длинных слов, если не помещаются */
     }
 }
