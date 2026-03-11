@@ -213,16 +213,11 @@ footer {
         border-bottom-right-radius: 200px;
     }
     
-    h1 {
-        font-size: clamp (2.5rem 5vw 2.5rem);
-        padding-bottom: 10px;
-        margin-top: -70px;
-    }
     .profile-img {
-        width: 150px;
-        height: 150px;
+        width: 100px;
+        height: 100px;
         border-width: 3px;
-        margin-top: -35px; /* корректируем наезд */
+        margin-top: -40px; /* корректируем наезд */
     }
 
 }
@@ -234,6 +229,12 @@ footer {
 
     h1 {
         font-size: 1.5rem;
+    }
+
+    h1 {
+        font-size: clamp (2.5rem 5vw 2.5rem);
+        padding-bottom: 10px;
+        margin-top: -70px;
     }
 
     .contact-card {
@@ -251,10 +252,10 @@ footer {
         word-break: break-word; /* Перенос длинных слов */
     }
     .profile-img {
-        width: 80px;
-        height: 80px;
+        width: 150px;
+        height: 150px;
         border-width: 3px;
-        margin-top: -30px;
+        margin-top: -35px;
     }
 
 }
