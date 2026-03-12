@@ -38,23 +38,30 @@ header {
     margin-bottom: 50px;
 }
 
-.header-subtitle {
+.subtitle {
     font-size: 1.2rem;
     opacity: 0.9;
     margin-top: 0.5rem;
 }
 
-.header-desc {
+.desc {
     font-size: 0.9rem;
     opacity: 0.7;
     margin-top: 0.25rem;
+}
+
+.description {
+    text-align: center;
+    color: black;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-top: -20px;
 }
 
 /* Контейнер для фото */
 .profile-container {
     display: flex;
     justify-content: center;
-    margin-top: -50px;
+    margin-top: -70px;
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -200,14 +207,14 @@ footer {
     }
 
     header {
-        padding: 2rem 1rem 2.5rem; /* Уменьшен вертикальный padding */
-        border-bottom-left-radius: 200px; /* Возвращены нормальные радиусы */
+        padding: 1rem 1rem 2.5rem; /* Уменьшен вертикальный padding */
+        border-bottom-left-radius: 200px; /* Изменены радиусы чтобы была выпуклость*/
         border-bottom-right-radius: 200px;
     }
 
     .profile-img {
-        width: 100px;
-        height: 100px;
+        width: 150px;
+        height: 150px;
         border-width: 3px;
         /* margin-top управляется родителем .profile-container */
     }
@@ -232,14 +239,13 @@ footer {
     }
 
     .profile-container {
-        margin-top: -40px; /* Чуть уменьшен подъём, чтобы фото не залезало на текст */
+        margin-top: -80px; /* Чуть уменьшен подъём, чтобы фото не залезало на текст */
     }
 
     .profile-img {
         width: 130px; /* Умеренное увеличение */
         height: 130px;
         border-width: 3px;
-        margin-top: -40px;
     }
 }
 
