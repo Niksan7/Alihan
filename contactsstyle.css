@@ -18,28 +18,23 @@ body {
 img {
     max-width: 100%;
     height: auto;
-    display: block; /* Убирает лишние отступы снизу */
+    display: block;
 }
 
 /* ===== Шапка ===== */
-/* ===== Выпуклый header с фото поверх ===== */
-
-/* Делаем header более объёмным */
 header {
-    position: relative; /* для возможного позиционирования */
-    background: linear-gradient(145deg, #5a4fcf 0%, #8a5fc0 100%); /* более насыщенный градиент */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(255, 255, 255, 0.3); /* внешняя и внутренняя тени для "выпуклости" */
-    padding: 2.5rem 1rem 3rem; /* увеличиваем нижний отступ, чтобы фото налезало */
+    position: relative;
+    background: linear-gradient(145deg, #5a4fcf 0%, #8a5fc0 100%);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), inset 0 -2px 0 rgba(255, 255, 255, 0.3);
+    padding: 2.5rem 1rem 3rem;
     border-bottom-left-radius: 30px;
     border-bottom-right-radius: 30px;
 }
 
-/* Текст в header */
 .header-content {
     text-align: center;
     color: white;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
-    margin-bottom: 50px;
 }
 
 .header-subtitle {
@@ -58,13 +53,12 @@ header {
 .profile-container {
     display: flex;
     justify-content: center;
-    margin-top: -50px; /* поднимаем фото, чтобы оно наехало на header */
-    margin-bottom: 20px; /* отступ до основного контента */
+    margin-top: -50px;
+    margin-bottom: 20px;
     position: relative;
-    z-index: 2; /* чтобы фото было над header */
+    z-index: 2;
 }
 
-/* Само фото */
 .profile-img {
     width: 120px;
     height: 120px;
@@ -72,7 +66,7 @@ header {
     object-fit: cover;
     border: 4px solid white;
     box-shadow: 0 5px 15px rgba(0,0,0,0.3);
-    background: white; /* на случай, если фото не загрузится */
+    background: white;
 }
 
 h1 {
@@ -115,7 +109,6 @@ h2 {
     gap: 1rem;
 }
 
-/* Стили для ссылок-карточек */
 .phone {
     display: flex;
     align-items: center;
@@ -123,7 +116,7 @@ h2 {
     padding: 1rem;
     background: #f7fafc;
     border-radius: 12px;
-    transition: transform 0.3s;
+    transition: transform 0.3s, color 0.3s;
     color: #4a5568;
     text-decoration: none;
     font-size: clamp(1rem, 4vw, 1.2rem);
@@ -132,7 +125,7 @@ h2 {
 
 .phone:hover {
     transform: translateX(10px);
-    color: #667eea; /* меняем цвет текста при наведении */
+    color: #667eea;
 }
 
 .instagram {
@@ -146,27 +139,25 @@ h2 {
     text-decoration: none;
     font-size: clamp(1rem, 4vw, 1.2rem);
     font-weight: 600;
-    transition: transform 0.3s;
+    transition: transform 0.3s; /* Добавлен transition */
 }
 
 .instagram:hover {
     transform: scale(1.02);
 }
 
-/* Фокус для доступности */
 .phone:focus,
 .instagram:focus {
     outline: 2px solid #667eea;
     outline-offset: 2px;
 }
 
-/* Иконки */
 .phone img,
 .instagram img {
     width: 44px;
     height: 44px;
     object-fit: contain;
-    flex-shrink: 0; /* защита от сжатия */
+    flex-shrink: 0;
 }
 
 .instagram img {
@@ -193,14 +184,12 @@ footer {
         padding: 1.5rem;
     }
 
-    /* Увеличиваем иконки для удобного нажатия */
     .phone img,
     .instagram img {
         width: 50px;
         height: 50px;
     }
 
-    /* На мобильных убираем горизонтальный сдвиг */
     .phone:hover {
         transform: none;
     }
@@ -208,34 +197,26 @@ footer {
     .instagram:hover {
         transform: none;
     }
+
     header {
-        padding: 2rem 1rem 2.5rem;
-        border-bottom-left-radius: 200px;
-        border-bottom-right-radius: 200px;
+        padding: 2rem 1rem 2.5rem; /* Уменьшен вертикальный padding */
+        border-bottom-left-radius: 30px; /* Возвращены нормальные радиусы */
+        border-bottom-right-radius: 30px;
     }
-    
+
     .profile-img {
         width: 100px;
         height: 100px;
         border-width: 3px;
-        margin-top: -40px; /* корректируем наезд */
+        /* margin-top управляется родителем .profile-container */
     }
-
 }
 
 @media (max-width: 480px) {
-    header {
-        /* padding: 1.5rem 1rem; */
-    }
-
+    /* Убран отрицательный margin-top у h1 */
     h1 {
-        /* font-size: 1.5rem; */
-    }
-
-    h1 {
-        font-size: clamp(2.5rem, 5vw, 2.5rem);
-        padding-bottom: 10px;
-        margin-top: -70px;
+        font-size: clamp(2rem, 6vw, 2.5rem);
+        padding-bottom: 5px;
     }
 
     .contact-card {
@@ -246,22 +227,20 @@ footer {
     .phone,
     .instagram {
         padding: 0.8rem;
+        word-break: break-word;
     }
 
-    .phone,
-    .instagram {
-        word-break: break-word; /* Перенос длинных слов */
+    .profile-container {
+        margin-top: -40px; /* Чуть уменьшен подъём, чтобы фото не залезало на текст */
     }
+
     .profile-img {
-        width: 150px;
-        height: 150px;
+        width: 130px; /* Умеренное увеличение */
+        height: 130px;
         border-width: 3px;
-        margin-top: -40px;
     }
-
 }
 
-/* Для планшетов */
 @media (min-width: 769px) and (max-width: 1024px) {
     .contact-card {
         padding: 1.8rem;
