@@ -35,6 +35,7 @@ header {
     text-align: center;
     color: white;
     text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+    margin-bottom: 50px;
 }
 
 .header-subtitle {
@@ -200,8 +201,8 @@ footer {
 
     header {
         padding: 2rem 1rem 2.5rem; /* Уменьшен вертикальный padding */
-        border-bottom-left-radius: 30px; /* Возвращены нормальные радиусы */
-        border-bottom-right-radius: 30px;
+        border-bottom-left-radius: 200px; /* Возвращены нормальные радиусы */
+        border-bottom-right-radius: 200px;
     }
 
     .profile-img {
@@ -238,6 +239,7 @@ footer {
         width: 130px; /* Умеренное увеличение */
         height: 130px;
         border-width: 3px;
+        margin-top: -40px;
     }
 }
 
