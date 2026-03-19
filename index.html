@@ -3,49 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Ведущий</title>
+    <meta name="description" content="Контакты ведущего Алихана Гергокова">
+    <title>Алихан Гергоков — ведущий</title>
     <link rel="stylesheet" href="contactsstyle.css">
 </head>
 <body>
     <header>
-        <h1>Ведущий</h1>
+        <div class="header-content">
+            <h1>Алихан Гергоков</h1>
+        </div> 
     </header>
+
+    <div class="profile-container">
+        <img src="profile.png" alt="Алихан Гергоков" class="profile-img">
+    </div>
+
+        <div class="description">
+            <p class="subtitle">Ведущий мероприятий</p>
+            <p class="desc">Свадьбы, корпоративы, юбилеи</p>
+    </div>
 
     <main>
         <article class="contact-card">
-            <h2>Гергоков Алихан</h2>
+            <h2>Контакты</h2>
             <div class="contact-info">
                 <div class="phone-numbers">
-                    <p class="phone">
-                        <span class="phone-label">
-                            <img src="phone.png" alt="Иконка телефона">
-                        </span>
-                        <a href="tel:+79640330033">+7 (964) 033-00-33</a>
-                    </p>
-                    <p class="phone">
-                        <span class="phone-label">
-                            <img src="phone.png" alt="Иконка телефона">
-                        </span>
-                        <a href="tel:+79993002169">+7 (999) 300-21-69</a>
-                    </p>
+                    <a href="tel:+79640330033" class="phone" aria-label="Позвонить по номеру +7 964 033-00-33">
+                        <img src="phone.png" alt="Иконка телефона">
+                        +7 (964) 033-00-33
+                    </a>
+                    <a href="tel:+79993002169" class="phone" aria-label="Позвонить по номеру +7 999 300-21-69">
+                        <img src="phone.png" alt="Иконка телефона">
+                        +7 (999) 300-21-69
+                    </a>
                 </div>
 
                 <div class="social">
-                    <p class="instagram">
-                        <img src="instagram.png" width="40" height="40" alt="Instagram">
-                        <a href="https://instagram.com/alihan_gergokov" target="_blank">
-                            @alihan_gergokov
-                        </a>
-                    </p>
+                    <a href="https://www.instagram.com/alihan_gergokov" class="instagram" target="_blank" rel="noopener noreferrer">
+                        <img src="instagram.png" alt="Иконка Instagram">
+                        @alihan_gergokov
+                    </a>
                 </div>
             </div>
         </article>
     </main>
 
     <footer>
-        <!-- Подвал пока пуст -->
+        <p>© 2025 Алихан Гергоков</p> <!-- Добавлено содержание -->
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Удалён script.js, так как файл отсутствует. При необходимости создайте пустой script.js -->
 </body>
 </html>
