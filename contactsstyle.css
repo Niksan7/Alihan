@@ -248,6 +248,12 @@ footer {
         border-width: 3px;
     }
 }
+/* Адаптация под xiaomi redmi not 12 4g */
+@media (min-height: 800px) {
+    header {
+        background: yellow;
+    }
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .contact-card {
