@@ -251,14 +251,14 @@ footer {
 /* Адаптация под xiaomi redmi not 12 4g */
 @media (min-height: 701px) and (max-height: 765px) {
     header {
-        background: rgb(51, 248, 2);
+        background: rgb(2, 47, 248);
     }
 }
 
 /* Адаптация под xiaomi 15 */
 @media (max-height: 700px) /*and (max-height: 850px)*/ {
     header {
-        background: rgb(245, 4, 4);
+        background: rgb(245, 4, 213);
     }
 }
 
