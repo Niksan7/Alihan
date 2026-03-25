@@ -249,18 +249,18 @@ footer {
     }
 }
 /* Адаптация под xiaomi redmi not 12 4g */
-@media (min-height: 705px) /*and (max-height: 870px)*/ {
+@media (max-height: 765px) /*and (max-height: 870px)*/ {
     header {
-        background: rgb(92, 248, 2);
+        background: rgb(224, 248, 2);
     }
 }
 
 /* Адаптация под xiaomi 15 */
-/* @media (min-height: 800px) and (max-height: 850px) {
+@media (max-height: 700px) /*and (max-height: 850px)*/ {
     header {
         background: rgb(245, 4, 4);
     }
-} */
+}
 
 @media (min-width: 769px) and (max-width: 1024px) {
     .contact-card {
