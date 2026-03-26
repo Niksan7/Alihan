@@ -1,6 +1,5 @@
 /* ===== Обнуление и базовые стили ===== */
 * {
-    height: 100%;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -259,7 +258,7 @@ footer {
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(4, 8, 252);
+        background: rgb(252, 4, 219);
     }
     h1 {
         padding-bottom: 0px;
