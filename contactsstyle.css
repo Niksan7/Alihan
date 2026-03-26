@@ -57,13 +57,16 @@ header {
     margin-top: -20px;
 }
 
+.general-container {
+    transform: translateY(-70px);
+}
 /* Контейнер для фото */
 .profile-container {
     display: flex;
     justify-content: center;
     margin-top: 0px;
-    transform: translateY(-70px); /* поднимаем фото */
-    margin-bottom: -60px;
+    /* transform: translateY(-70px); */ /* поднимаем фото */
+    margin-bottom: 20px;
     position: relative;
     z-index: 2;
 }
