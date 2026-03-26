@@ -61,7 +61,8 @@ header {
 .profile-container {
     display: flex;
     justify-content: center;
-    margin-top: -70px;
+    margin-top: 0px;
+    transform: translateY(-70px); /* поднимаем фото */
     margin-bottom: 20px;
     position: relative;
     z-index: 2;
@@ -258,7 +259,7 @@ footer {
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(252, 4, 219);
+        background: rgb(4, 252, 211);
     }
     h1 {
         padding-bottom: 0px;
