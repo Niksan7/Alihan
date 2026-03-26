@@ -259,7 +259,7 @@ footer {
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(252, 4, 219);
+        background: rgb(4, 8, 252);
     }
     h1 {
         padding-bottom: 0px;
