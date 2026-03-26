@@ -11,7 +11,8 @@ body {
     color: #333;
     background-color: #fafafa;
     min-height: 100vh;
-    display: flex;
+    display: grid;
+    grid-template-rows: auto auto auto 1fr auto;
     flex-direction: column;
 }
 
@@ -83,7 +84,7 @@ h1 {
 
 /* ===== Основной контент ===== */
 main {
-    flex: 1;
+    /* flex: 1; */
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
