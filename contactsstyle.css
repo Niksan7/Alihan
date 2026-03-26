@@ -63,7 +63,7 @@ header {
     justify-content: center;
     margin-top: 0px;
     transform: translateY(-70px); /* поднимаем фото */
-    margin-bottom: 20px;
+    margin-bottom: -60px;
     position: relative;
     z-index: 2;
 }
@@ -239,9 +239,9 @@ footer {
         word-break: break-word;
     }
 
-    .profile-container {
-        margin-top: -80px; /* Чуть уменьшен подъём, чтобы фото не залезало на текст */
-    }
+    /* .profile-container {
+        margin-top: -80px; /* Чуть уменьшен подъём, чтобы фото не залезало на текст 
+    } */
 
     .profile-img {
         width: 130px; /* Умеренное увеличение */
@@ -252,14 +252,14 @@ footer {
 /* Адаптация под xiaomi redmi not 12 4g */
 @media (max-height: 765.9px) {
     header {
-        background: rgb(2, 248, 22);
+        background: rgb(6, 2, 248);
     }
 }
 
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(4, 252, 211);
+        background: rgb(252, 4, 66);
     }
     h1 {
         padding-bottom: 0px;
