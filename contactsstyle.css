@@ -258,7 +258,7 @@ footer {
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(6, 255, 213);
+        background: rgb(252, 4, 219);
     }
     h1 {
         padding-bottom: 0px;
@@ -273,9 +273,12 @@ footer {
     .contact-info {
         gap: 1.5rem;
     }
-        .contact-card {
-            padding: 0.5rem;
-        }
+    .contact-card {
+        padding: 0.8rem;
+    }
+    .phone, .instagram {
+        padding: 0.5rem;
+    }
 }
 
 @media (min-width: 769px) and (max-width: 1024px) {
