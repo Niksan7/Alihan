@@ -11,8 +11,7 @@ body {
     color: #333;
     background-color: #fafafa;
     min-height: 100vh;
-    display: grid;
-    grid-template-rows: auto auto auto 1fr auto;
+    display: flex;
     flex-direction: column;
 }
 
@@ -84,7 +83,7 @@ h1 {
 
 /* ===== Основной контент ===== */
 main {
-    /* flex: 1; */
+    flex: 1;
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -259,7 +258,7 @@ footer {
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(252, 4, 219);
+        background: rgb(4, 252, 210);
     }
     h1 {
         padding-bottom: 0px;
