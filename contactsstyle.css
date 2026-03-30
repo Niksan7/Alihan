@@ -5,8 +5,8 @@
     box-sizing: border-box;
 }
 
-/* Добавлено для корректной работы min-height в Chrome */
-html {
+/* ===== Исправление для Chrome: явная высота у html и body ===== */
+html, body {
     height: 100%;
 }
 
@@ -15,7 +15,6 @@ body {
     line-height: 1.6;
     color: #333;
     background-color: #fafafa;
-    min-height: 100vh;       /* Занимает минимум всю высоту окна */
     display: flex;
     flex-direction: column;
 }
@@ -88,7 +87,7 @@ h1 {
 
 /* ===== Основной контент ===== */
 main {
-    flex: 1;                /* Занимает всё свободное пространство, прижимая footer вниз */
+    flex: 1 0 auto;          /* Растягивается и прижимает футер */
     max-width: 1200px;
     margin: 2rem auto;
     padding: 0 1rem;
@@ -185,7 +184,7 @@ footer {
     padding: 2rem;
     background: #2d3748;
     color: white;
-    /* Убрал margin-top: auto — он больше не нужен, так как main уже растягивается */
+    flex-shrink: 0;          /* Запрещаем футеру сжиматься */
 }
 
 /* ===== Адаптивность ===== */
@@ -256,14 +255,14 @@ footer {
 /* Адаптация под xiaomi redmi not 12 4g */
 @media (max-height: 765.9px) {
     header {
-        background: rgb(2, 158, 248);
+        background: rgb(228, 2, 248);
     }
 }
 
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
     header {
-        background: rgb(252, 4, 198);
+        background: rgb(4, 252, 37);
     }
     h1 {
         padding-bottom: 0px;
