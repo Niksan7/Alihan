@@ -223,11 +223,11 @@ footer {
 }
 
 /* Добавляем иконку через псевдоэлемент (эмодзи/символ) */
-#addContactBtn::before {
+/* #addContactBtn::before {
     content: "📇";
     font-size: 1.3rem;
     transition: transform 0.2s;
-}
+} */
 
 /* Эффект при наведении */
 #addContactBtn:hover {
