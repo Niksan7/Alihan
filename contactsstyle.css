@@ -195,7 +195,7 @@ h2 {
 /* ===== Подвал ===== */
 footer {
     text-align: center;
-    padding: 2rem;
+    padding: 1.5rem;
     background: #2d3748;
     color: white;
     flex-shrink: 0;
