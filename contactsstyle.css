@@ -337,9 +337,6 @@ footer {
 
 /* Адаптация под xiaomi redmi not 12 4g */
 @media (max-height: 765.9px) {
-    header {
-        background: rgb(2, 248, 207);
-    }
     .phone-numbers {
         gap: 1rem;
     }
@@ -347,9 +344,6 @@ footer {
 
 /* Адаптация под xiaomi 15 */
 @media (max-height: 706.9px) {
-    header {
-        background: rgb(252, 4, 231);
-    }
     h1 {
         padding-bottom: 0px;
     }
