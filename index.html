@@ -49,7 +49,37 @@
     </main>
 
     <footer>
-        <p>© 2025 Алихан Гергоков</p>
+         <a href="#" id="addContactBtn">Сохранить контакт</a>
+         <!-- <p>© 2026</p> -->
     </footer>
+
+    <script>
+document.getElementById('addContactBtn').addEventListener('click', function(e) {
+    e.preventDefault(); // Отменяем стандартный переход по ссылке
+
+    // Ссылка на ваш vcf-файл
+    const vcfUrl = 'contact.vcf'; 
+    const fileName = 'Ведущий.vcf';
+
+    fetch(vcfUrl)
+        .then(response => response.blob())
+        .then(blob => {
+            // Создаем "виртуальный" файл с правильным типом
+            const file = new File([blob], fileName, { type: 'text/vcard' });
+            const url = URL.createObjectURL(file);
+
+            // Создаем невидимую ссылку и "кликаем" по ней
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = fileName;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            
+            // Очищаем память
+            URL.revokeObjectURL(url);
+        });
+});
+</script>
 </body>
 </html>
