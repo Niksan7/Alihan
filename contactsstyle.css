@@ -130,52 +130,7 @@ h2 {
     width: 100%;
 }
 
-/* ===== Единый стиль для кнопок соцсетей (WhatsApp, Telegram, Instagram) ===== */
-.whatsapp,
-.telegram,
-.instagram {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    padding: 1rem;
-    border-radius: 12px;
-    text-decoration: none;
-    transition: transform 0.3s;
-    width: 100%;
-}
-
-/* Иконки внутри белого круга */
-.whatsapp img,
-.telegram img,
-.instagram img {
-    width: 44px;
-    height: 44px;
-    object-fit: contain;
-    flex-shrink: 0;
-    border-radius: 50%;
-    background: white;
-}
-
-/* Фирменные фоны */
-.whatsapp {
-    background: #25D366;
-}
-
-.telegram {
-    background: #26A5E4;
-}
-
-.instagram {
-    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
-}
-
-/* Эффекты при наведении */
-.whatsapp:hover,
-.telegram:hover,
-.instagram:hover {
-    transform: scale(1.02);
-}
+/* ===== Стили для соцсетей (WhatsApp, Telegram, Instagram) полностью удалены ===== */
 
 /* ===== Стиль для телефона (оставляем без изменений) ===== */
 .phone {
@@ -252,7 +207,7 @@ footer {
     outline-offset: 4px;
 }
 
-/* ===== Адаптивность ===== */
+/* ===== Адаптивность (удалены стили для соцсетей) ===== */
 @media (max-width: 768px) {
     main {
         margin: 1rem auto;
@@ -260,16 +215,10 @@ footer {
     .contact-card {
         padding: 1.5rem;
     }
-    .whatsapp img,
-    .telegram img,
-    .instagram img,
     .phone img {
         width: 50px;
         height: 50px;
     }
-    .whatsapp:hover,
-    .telegram:hover,
-    .instagram:hover,
     .phone:hover {
         transform: none;
     }
@@ -299,9 +248,6 @@ footer {
         padding: 1rem;
         border-radius: 15px;
     }
-    .whatsapp,
-    .telegram,
-    .instagram,
     .phone {
         padding: 0.8rem;
         word-break: break-word;
@@ -348,9 +294,6 @@ footer {
     .contact-card {
         padding: 0.8rem;
     }
-    .whatsapp,
-    .telegram,
-    .instagram,
     .phone {
         padding: 0.5rem;
     }
