@@ -362,6 +362,9 @@ footer {
         width: 150px;
         height: 150px;
     }
+    .profile-container {
+        margin-top: -100px;
+    }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .contact-card {
