@@ -380,3 +380,36 @@ footer {
         padding: 1.8rem;
     }
 }
+/* ===== Плавающее изображение-ссылка поверх всех блоков ===== */
+.floating-banner {
+    position: fixed;
+    top: 150px;
+    right: 30px;
+    z-index: 10000;          /* выше всех других элементов */
+    display: block;
+    width: 80px;
+    height: 80px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
+}
+
+.floating-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.floating-banner:hover {
+    transform: scale(1.05);
+}
+
+/* Адаптация для маленьких экранов – уменьшаем размер */
+@media (max-width: 768px) {
+    .floating-banner {
+        width: 60px;
+        height: 60px;
+        top: 150px;
+        right: 30px;
+    }
+}
