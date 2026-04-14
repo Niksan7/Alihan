@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Поздравление</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background-image: url('background.jpg');
+            background-repeat: no-repeat;
+            background-position: center center;
+            background-color: #0a0a2a;
+            background-size: 100% 100%;
+
+            min-height: 100vh;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .arc-container {
+            text-align: center;
+            max-width: 95vw;
+            white-space: nowrap;
+            padding: 20px 0;
+            margin-top: 290px;
+        }
+
+        .arc-letter {
+            display: inline-block;
+            font-family: 'Arial Black', 'Impact', sans-serif;
+            font-weight: bold;
+            /* Градиент без бирюзового и синего */
+            background: linear-gradient(90deg, 
+                #ff0080, #ff8c00, #ffd700, #9370db, #ff0080);
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            /* Анимация движения градиента справа налево */
+            animation: shimmer 4s linear infinite;
+            transition: transform 0.1s ease;
+            margin: 0 2px;
+        }
+
+        /* Ключевые кадры для перелива справа налево */
+        @keyframes shimmer {
+            0% {
+                background-position: 200% 0;
+            }
+            100% {
+                background-position: 0% 0;
+            }
+        }
+
+        video {
+            display: block;
+            max-width: 90vw;
+            max-height: 90vh;
+            width: auto;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+        }
+
+        /* Базовый размер шрифта */
+        .arc-letter {
+            font-size: clamp(48px, 12vw, 110px);
+        }
+
+        /* Адаптация под Xiaomi Redmi Note 12 4G (max-height: 765.9px) */
+        @media (max-height: 765.9px) {
+            video {
+                max-width: 300px;
+                max-height: 300px;
+            }
+            .arc-letter {
+                font-size: clamp(30px, 30px, 70px);
+            }
+            .arc-container {
+                padding: 12px 0;
+            }
+        }
+
+        /* Адаптация под Xiaomi 15 (max-height: 706.9px) */
+        @media (max-height: 706.9px) {
+            .arc-letter {
+                font-size: clamp(30px, 30px, 64px);
+            }
+            .arc-container {
+                padding: 8px 0;
+            }
+        }
+
+        @media (max-width: 500px) {
+            .arc-letter {
+                margin: 0 -1px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="arc-container" id="arcText"></div>
+
+<video src="video.mp4" controls width="640" height="360">
+    Ваш браузер не поддерживает видео.
+</video>
+
+<script>
+    (function() {
+        const text = "С ДНЁМ РОЖДЕНИЯ !!!";
+        const chars = text.split('');
+        const container = document.getElementById('arcText');
+        container.innerHTML = '';
+        
+        const spans = [];
+        for (let i = 0; i < chars.length; i++) {
+            const span = document.createElement('span');
+            span.className = 'arc-letter';
+            if (chars[i] === ' ') {
+                span.innerHTML = '&nbsp;';
+                span.style.width = '0.6em';
+            } else {
+                span.textContent = chars[i];
+            }
+            container.appendChild(span);
+            spans.push(span);
+        }
+        
+        function applyArc() {
+            if (spans.length === 0) return;
+            const firstSpan = spans[0];
+            const fontSize = parseFloat(getComputedStyle(firstSpan).fontSize);
+            const maxOffset = fontSize * 0.7;
+            const centerIndex = (spans.length - 1) / 2;
+            
+            for (let i = 0; i < spans.length; i++) {
+                let distance = Math.abs(i - centerIndex) / centerIndex;
+                let factor = 1 - Math.pow(distance, 1.6);
+                let offset = -maxOffset * factor;
+                if (offset > 0) offset = 0;
+                if (offset < -maxOffset) offset = -maxOffset;
+                
+                if (chars[i] === ' ') {
+                    offset = offset * 0.3;
+                }
+                spans[i].style.transform = `translateY(${offset}px)`;
+            }
+        }
+        
+        applyArc();
+        window.addEventListener('resize', () => applyArc());
+        const observer = new ResizeObserver(() => applyArc());
+        observer.observe(container);
+    })();
+</script>
+
+</body>
+</html>
