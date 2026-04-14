@@ -358,6 +358,10 @@ footer {
     .save-contact-wrapper {
         margin-top: 5rem;
     }
+    .profile-img {
+        width: 150px;
+        height: 150px;
+    }
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .contact-card {
