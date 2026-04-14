@@ -371,6 +371,9 @@ footer {
     .desc {
     font-size: 1.5rem;
 }
+    h1 {
+    font-size: 2.5rem;
+}
 }
 @media (min-width: 769px) and (max-width: 1024px) {
     .contact-card {
