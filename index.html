@@ -5,88 +5,197 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Контакты ведущего Алихана Гергокова">
     <!-- обычный favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<!-- Apple Touch (iPhone/iPad) -->
-<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+    <!-- Apple Touch (iPhone/iPad) -->
+    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
     <title>Алихан Гергоков — ведущий</title>
     <link rel="stylesheet" href="contactsstyle.css">
+    <style>
+        /* ===== Модальное окно (поверх всего) ===== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.75);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10000;
+            backdrop-filter: blur(3px);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+        }
+
+        .modal-container {
+            position: relative;
+            background: white;
+            max-width: 90%;
+            width: 500px;
+            border-radius: 24px;
+            padding: 28px 24px 24px 24px;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+            animation: modalFadeIn 0.2s ease-out;
+            margin: 20px;
+        }
+
+        @keyframes modalFadeIn {
+            from {
+                opacity: 0;
+                transform: scale(0.95);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
+
+        .modal-close {
+            position: absolute;
+            top: 12px;
+            right: 16px;
+            background: none;
+            border: none;
+            font-size: 32px;
+            line-height: 1;
+            cursor: pointer;
+            color: #4a5568;
+            transition: color 0.2s;
+            padding: 4px 8px;
+            border-radius: 40px;
+        }
+
+        .modal-close:hover {
+            color: #e53e3e;
+            background-color: #f7fafc;
+        }
+
+        .modal-content {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #2d3748;
+            text-align: left;
+        }
+
+        .modal-content p {
+            margin: 0;
+            padding-right: 20px; /* чтобы текст не налезал на крестик */
+        }
+
+        /* Адаптация для маленьких экранов */
+        @media (max-width: 640px) {
+            .modal-container {
+                padding: 24px 20px 20px 20px;
+            }
+            .modal-content {
+                font-size: 0.9rem;
+            }
+            .modal-close {
+                top: 8px;
+                right: 12px;
+                font-size: 28px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <div class="header-content">
-            <h1>Алихан Гергоков</h1>
-        </div> 
-    </header>
 
-    <div class="profile-container">
-        <img src="profile.png" alt="Алихан Гергоков" class="profile-img">
-    </div>
-
-    <div class="description">
-        <p class="subtitle">Ведущий мероприятий</p>
-        <p class="desc">Свадьбы, корпоративы, юбилеи</p>
-    </div>
-
-    <main>
-        <article class="contact-card">
-            <h2>Контакты</h2>
-            <div class="contact-info">
-                <div class="phone-numbers">
-                    <a href="tel:+79993002169" class="phone" aria-label="Позвонить по номеру +7 999 300-21-69">
-                        <img src="phone.png" alt="Иконка телефона">
-                        +7 (999) 300-21-69
-                    </a>
-                </div>
-
-                <div class="social">
-                    <a href="https://wa.me/79993002169?text=Здравствуйте!" class="whatsapp" target="_blank" rel="noopener noreferrer">
-                        <img src="whatsapp.png" alt="Иконка whatsapp">
-                    </a>
-                    <a href="https://t.me/alihangergokov?text=Здравствуйте!" class="telegram" target="_blank" rel="noopener noreferrer">
-                        <img src="telegram.png" alt="Иконка telegram">
-                    </a>
-                    <a href="https://www.instagram.com/alihan_gergokov" class="instagram" target="_blank" rel="noopener noreferrer">
-                        <img src="instagram.png" alt="Иконка Instagram">
-                    </a>
-                </div>
-            </div>
-        </article>
-        <div class="save-contact-wrapper">
-            <a href="#" id="addContactBtn">Сохранить контакт</a>
+<!-- Модальное окно с предупреждением -->
+<div class="modal-overlay" id="noticeModal">
+    <div class="modal-container">
+        <button class="modal-close" aria-label="Закрыть">&times;</button>
+        <div class="modal-content">
+            <p>Обратите внимание: на территории Российской Федерации использование приложений WhatsApp, Telegram и Instagram ограничено (признаны запрещёнными). Настоящий сайт не требует от вас установки, регистрации или использования данных сервисов. Любое взаимодействие с ними осуществляется вами добровольно.</p>
         </div>
-    </main>
+    </div>
+</div>
 
-    <footer>
-            <p>© 2026</p>
-    </footer>
+<header>
+    <div class="header-content">
+        <h1>Алихан Гергоков</h1>
+    </div> 
+</header>
 
-    <script>
-document.getElementById('addContactBtn').addEventListener('click', function(e) {
-    e.preventDefault(); // Отменяем стандартный переход по ссылке
+<div class="profile-container">
+    <img src="profile.png" alt="Алихан Гергоков" class="profile-img">
+</div>
 
-    // Ссылка на ваш vcf-файл
-    const vcfUrl = 'contact.vcf'; 
-    const fileName = 'Ведущий.vcf';
+<div class="description">
+    <p class="subtitle">Ведущий мероприятий</p>
+    <p class="desc">Свадьбы, корпоративы, юбилеи</p>
+</div>
 
-    fetch(vcfUrl)
-        .then(response => response.blob())
-        .then(blob => {
-            // Создаем "виртуальный" файл с правильным типом
-            const file = new File([blob], fileName, { type: 'text/vcard' });
-            const url = URL.createObjectURL(file);
+<main>
+    <article class="contact-card">
+        <h2>Контакты</h2>
+        <div class="contact-info">
+            <div class="phone-numbers">
+                <a href="tel:+79993002169" class="phone" aria-label="Позвонить по номеру +7 999 300-21-69">
+                    <img src="phone.png" alt="Иконка телефона">
+                    +7 (999) 300-21-69
+                </a>
+            </div>
 
-            // Создаем невидимую ссылку и "кликаем" по ней
-            const a = document.createElement('a');
-            a.href = url;
-            a.download = fileName;
-            document.body.appendChild(a);
-            a.click();
-            document.body.removeChild(a);
-            
-            // Очищаем память
-            URL.revokeObjectURL(url);
-        });
-});
+            <div class="social">
+                <a href="https://wa.me/79993002169?text=Здравствуйте!" class="whatsapp" target="_blank" rel="noopener noreferrer">
+                    <img src="whatsapp.png" alt="Иконка whatsapp">
+                </a>
+                <a href="https://t.me/alihangergokov?text=Здравствуйте!" class="telegram" target="_blank" rel="noopener noreferrer">
+                    <img src="telegram.png" alt="Иконка telegram">
+                </a>
+                <a href="https://www.instagram.com/alihan_gergokov" class="instagram" target="_blank" rel="noopener noreferrer">
+                    <img src="instagram.png" alt="Иконка Instagram">
+                </a>
+            </div>
+        </div>
+    </article>
+    <div class="save-contact-wrapper">
+        <a href="#" id="addContactBtn">Сохранить контакт</a>
+    </div>
+</main>
+
+<footer>
+    <p>© 2026</p>
+</footer>
+
+<script>
+    // Существующий скрипт для сохранения контакта
+    document.getElementById('addContactBtn').addEventListener('click', function(e) {
+        e.preventDefault();
+
+        const vcfUrl = 'contact.vcf';
+        const fileName = 'Ведущий.vcf';
+
+        fetch(vcfUrl)
+            .then(response => response.blob())
+            .then(blob => {
+                const file = new File([blob], fileName, { type: 'text/vcard' });
+                const url = URL.createObjectURL(file);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+                URL.revokeObjectURL(url);
+            });
+    });
+
+    // Скрипт для закрытия модального окна
+    const modal = document.getElementById('noticeModal');
+    const closeBtn = modal.querySelector('.modal-close');
+
+    // Закрытие по кнопке (крестик)
+    closeBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+    });
+
+    // Закрытие по клику на затемнённый фон (overlay)
+    modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+            modal.style.display = 'none';
+        }
+    });
 </script>
 </body>
 </html>
