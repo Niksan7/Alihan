@@ -316,13 +316,16 @@ footer {
         gap: 0.8rem;
     }
 }
-
+/* ===== Адаптивность xiaomi redmi note 12 4g ===== */
 @media (max-height: 765.9px) {
     .phone-numbers {
         gap: 1rem;
     }
+    .save-contact-wrapper {
+        margin-top: 3.5rem;
+    }
 }
-
+/* ===== Адаптивность xiaomi 15 ===== */
 @media (max-height: 706.9px) {
     h1 {
         padding-bottom: 0px;
@@ -345,6 +348,9 @@ footer {
     }
     .phone {
         padding: 0.5rem;
+    }
+    .save-contact-wrapper {
+        margin-top: 3rem;
     }
 }
 
